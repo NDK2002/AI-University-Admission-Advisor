@@ -34,11 +34,9 @@ Các quy tắc cần thỏa mãn các tiêu chí kỹ thuật sau:
    * Bổ sung cặp ngoặc tròn bao ngoài các khối điều kiện điểm thi nhằm đảm bảo thứ tự ưu tiên toán tử logic (đặc biệt là luật R8 ngành Thiết kế đồ họa).
    * Thống nhất tập giá trị sở thích chuẩn hóa thành các chuỗi cụ thể để Thành viên 2 dễ dàng lập trình bằng Python (`admission_expert_system.py`) và Thành viên 3 đưa vào Context của LLM (`prompt_and_hallucination_test.md`).
 
----
+### 📝 Câu Prompt gửi LLM (Phiên bản chi tiết của TV1):
 
-## 0. Prompt dùng LLM để liệt kê Luật dẫn (Bước 1 của đề)
-
-Đây là prompt nhóm dùng để yêu cầu LLM (ChatGPT / Claude / Gemini) hỗ trợ liệt kê bộ luật ban đầu, trước khi Thành viên 1 rà soát/chuẩn hóa lại thành bộ 10 luật chính thức ở mục 3. Chụp màn hình đoạn chat này (câu hỏi + câu trả lời của LLM) để đưa vào báo cáo làm bằng chứng đã thực hiện Bước 1.
+Đây là prompt chính thức nhóm dùng để yêu cầu LLM (ChatGPT / Claude / Gemini) hỗ trợ liệt kê bộ luật ban đầu, trước khi Thành viên 1 rà soát/chuẩn hóa lại thành bộ 10 luật chính thức ở mục 3. Chụp màn hình đoạn chat này (câu hỏi + câu trả lời của LLM) để đưa vào báo cáo làm bằng chứng đã thực hiện Bước 1.
 
 ```text
 Bạn hãy đóng vai một chuyên gia tư vấn tuyển sinh đại học kiêm Kỹ sư Tri thức (Knowledge Engineer),
