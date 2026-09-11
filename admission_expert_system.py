@@ -219,11 +219,11 @@ class AdmissionExpertSystem:
 
 
 def run_benchmark_tests():
-    """Chạy 3 kịch bản kiểm thử (Test cases) đối chiếu với LLM"""
+    """Chạy 3 kịch bản biên và 1 kịch bản đủ điều kiện để đối chiếu"""
     expert_system = AdmissionExpertSystem()
 
     print("=" * 70)
-    print("CHẠY THỰC NGHIỆM 3 KỊCH BẢN KIỂM THỬ (GROUND TRUTH)")
+    print("CHẠY THỰC NGHIỆM 4 KỊCH BẢN KIỂM THỬ (GROUND TRUTH)")
     print("=" * 70)
 
     # Test Case 1: Điểm cận biên (Borderline)
@@ -253,7 +253,16 @@ def run_benchmark_tests():
         interests=["Khám chữa bệnh", "Nghiên cứu Y học"]
     )
 
-    test_cases = [tc1, tc2, tc3]
+    # Test Case 4: Đủ điều kiện theo luật R1 (Positive control)
+    # Kỳ vọng: Khớp R1 và được tư vấn ngành Khoa học Máy tính
+    tc4 = StudentProfile(
+        name="Thí sinh D (Test Ca 4: Đủ điều kiện R1)",
+        scores={"Toan": 9.0, "Ly": 8.5, "Hoa": 7.0, "Tin": 8.5, "Anh": 7.0, "Van": 7.0},
+        ielts=6.0,
+        interests=["Lập trình"]
+    )
+
+    test_cases = [tc1, tc2, tc3, tc4]
 
     for idx, tc in enumerate(test_cases, 1):
         print(f"\n[KỊCH BẢN {idx}] {tc.name}")
