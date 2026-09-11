@@ -5,6 +5,44 @@
 
 ---
 
+## 0. Prompt dùng LLM để liệt kê Luật dẫn (Bước 1 của đề)
+
+Đây là prompt nhóm dùng để yêu cầu LLM (ChatGPT / Claude / Gemini) hỗ trợ liệt kê bộ luật ban đầu, trước khi Thành viên 1 rà soát/chuẩn hóa lại thành bộ 10 luật chính thức ở mục 3. Chụp màn hình đoạn chat này (câu hỏi + câu trả lời của LLM) để đưa vào báo cáo làm bằng chứng đã thực hiện Bước 1.
+
+```text
+Bạn hãy đóng vai một chuyên gia tư vấn tuyển sinh đại học kiêm Kỹ sư Tri thức (Knowledge Engineer),
+có nhiệm vụ xây dựng Cơ sở tri thức dạng luật dẫn (IF-THEN Rules) cho một hệ chuyên gia
+(Rule-based Expert System) tư vấn ngành học cho học sinh THPT.
+
+QUY ƯỚC KÝ HIỆU (bắt buộc dùng đúng):
+- T, L, H, V, A, Tin, Ve: điểm Toán, Vật lý, Hóa học, Ngữ văn, Tiếng Anh, Tin học, Năng khiếu Vẽ.
+- A00 = T + L + H, A01 = T + L + A, D01 = T + V + A.
+- IELTS: điểm chứng chỉ IELTS (có thể không có).
+- SoThich: sở thích cá nhân của thí sinh.
+
+YÊU CẦU:
+1. Liệt kê ĐÚNG 10 luật IF-THEN, mỗi luật ứng với một ngành đào tạo khác nhau, không trùng lặp.
+2. Toàn bộ 10 luật phải cùng nhau bao phủ đa dạng các yếu tố: điểm Toán/Lý/Hóa/Văn/Anh/Tin/Vẽ,
+   tổ hợp A00/A01/D01, IELTS, và sở thích cá nhân (không bắt buộc mỗi luật dùng hết mọi yếu tố).
+3. MỌI luật đều phải có điều kiện SoThich, và SoThich phải là điều kiện AND bắt buộc ở cuối cùng
+   (không được để sở thích thành điều kiện tùy chọn nối bằng OR, trừ khi nêu rõ lý do).
+4. Ngành đào tạo phải đa dạng nhóm: có ít nhất nhóm CNTT/Máy tính, nhóm Kinh tế/Kinh doanh,
+   nhóm Kỹ thuật/Công nghệ, nhóm Ngôn ngữ, nhóm Nghệ thuật/Thiết kế.
+5. Trình bày MỖI luật đúng theo cú pháp sau, không viết văn xuôi mơ hồ:
+
+   R<số> (<Tên ngành>):
+   IF <điều kiện 1> AND <điều kiện 2> ... THEN Nganh = "<Tên ngành>"
+
+6. BẮT BUỘC dùng dấu ngoặc tường minh mỗi khi kết hợp AND và OR trong cùng một luật, để tránh
+   sai độ ưu tiên toán tử. Ví dụ đúng: (A OR B) AND C. Không được viết mơ hồ kiểu: A OR B AND C.
+7. Sau khi liệt kê xong 10 luật, xuất kèm 1 bảng tổng hợp gồm các cột:
+   Mã luật | Ngành | Điều kiện chính | Sở thích yêu cầu.
+
+Hãy bắt đầu liệt kê.
+```
+
+---
+
 ## 1. Phạm vi tri thức
 
 Hệ thống tư vấn dựa trên các nhóm thông tin sau:
