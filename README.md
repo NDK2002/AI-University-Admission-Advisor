@@ -47,4 +47,4 @@ Dự án xây dựng hệ thống trợ lý ảo tư vấn tuyển sinh đại h
 ```bash
 python admission_expert_system.py
 ```
-Hệ thống sẽ tự động chạy 3 kịch bản kiểm thử mẫu (Điểm cận biên, Dữ liệu mâu thuẫn, Hỏi ngoài phạm vi) và xuất kết quả suy diễn logic ra màn hình.
+Hệ thống sẽ tự động chạy 4 kịch bản kiểm thử mẫu: 3 trường hợp biên theo đề bài (Điểm cận biên, Dữ liệu mâu thuẫn, Hỏi ngoài phạm vi) và 1 trường hợp đủ điều kiện R1 để xác nhận hệ thống có thể đưa ra kết quả phù hợp.
