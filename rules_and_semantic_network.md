@@ -3,6 +3,37 @@
 > **Phần phụ trách:** Thành viên 1 — Knowledge Engineer  
 > **Mục tiêu:** Xây dựng tối thiểu 10 luật IF–THEN và Mạng ngữ nghĩa cho hệ tư vấn tuyển sinh đại học.
 
+## 0. Quy trình Thảo luận & Bộ Prompt Khai thác Tri thức từ LLM (Bước 1)
+
+Theo yêu cầu của đề bài: *"Nhóm cùng thảo luận và sử dụng LLM để liệt kê các quy luật tuyển sinh phức tạp..."*, Thành viên 1 đã sử dụng câu **Prompt chuyên gia** dưới đây để làm việc với LLM (ChatGPT-4o / Claude 3.5 Sonnet / Gemini):
+
+### 📝 Câu Prompt thực tế của Thành viên 1 (Knowledge Engineer):
+```text
+"Hãy đóng vai trò là một chuyên gia tư vấn tuyển sinh đại học và kỹ sư tri thức (Knowledge Engineer).
+Tôi đang thực hiện bài tập xây dựng một Hệ chuyên gia tư vấn tuyển sinh đại học dựa trên luật dẫn (Rule-based Expert System) kết hợp với Mô hình Ngôn ngữ Lớn (LLM).
+
+Yêu cầu bạn cùng tôi thảo luận và sinh ra 10 quy tắc tuyển sinh phức tạp dạng IF-THEN cho 10 ngành học đại học phổ biến (thuộc 4 nhóm: Công nghệ thông tin, Kinh tế & Quản trị, Kỹ thuật Công nghệ, Nghệ thuật & Ngôn ngữ).
+
+Các quy tắc cần thỏa mãn các tiêu chí kỹ thuật sau:
+1. Tính phức tạp logic: Mỗi quy tắc phải là sự kết hợp của các toán tử logic AND (VÀ), OR (HOẶC), NOT (PHỦ ĐỊNH) nếu cần.
+2. Đa dạng tiêu chí đánh giá:
+   - Điểm thi các môn tốt nghiệp THPT: Toán, Vật lý, Hóa học, Ngữ văn, Tiếng Anh, Tin học, Năng khiếu Vẽ.
+   - Điểm các tổ hợp xét tuyển truyền thống: A00 (Toán-Lý-Hóa), A01 (Toán-Lý-Anh), D01 (Toán-Văn-Anh).
+   - Chứng chỉ ngoại ngữ quốc tế: IELTS (xét tuyển kết hợp hoặc quy đổi).
+   - Sở thích và định hướng nghề nghiệp cá nhân: Là điều kiện bắt buộc (AND) để đảm bảo sinh viên chọn đúng ngành yêu thích.
+3. Đảm bảo tính độc lập và phân loại: Mỗi luật dẫn đến một ngành cụ thể duy nhất, không mâu thuẫn nhưng có thể có học sinh thỏa mãn đồng thời nhiều luật.
+4. Định dạng đầu ra:
+   - Biểu diễn chuẩn dạng: IF <Mệnh đề điều kiện logic> THEN <Trúng tuyển ngành X>
+   - Kèm theo phân tích ý nghĩa thực tế của từng quy tắc."
+```
+
+### 💡 Quá trình phản hồi và tinh chỉnh của Nhóm:
+1. **Phản hồi từ LLM:** LLM đã đề xuất danh sách 10 ngành cùng các ngưỡng điểm sàn và tổ hợp môn tương ứng với mặt bằng chung của các trường đại học top đầu (Bách Khoa, KHTN, Kinh Tế).
+2. **Nhóm tinh chỉnh (Human-in-the-loop):**
+   * Chuẩn hóa ký hiệu viết tắt ($T, L, H, V, A, Tin, Ve, IELTS$).
+   * Bổ sung cặp ngoặc tròn bao ngoài các khối điều kiện điểm thi nhằm đảm bảo thứ tự ưu tiên toán tử logic (đặc biệt là luật R8 ngành Thiết kế đồ họa).
+   * Thống nhất tập giá trị sở thích chuẩn hóa thành các chuỗi cụ thể để Thành viên 2 dễ dàng lập trình bằng Python (`admission_expert_system.py`) và Thành viên 3 đưa vào Context của LLM (`prompt_and_hallucination_test.md`).
+
 ---
 
 ## 1. Phạm vi tri thức
