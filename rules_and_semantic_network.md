@@ -1,127 +1,629 @@
-# BÀI TẬP 2: BỘ CƠ SỞ TRI THỨC VÀ MẠNG NGỮ NGHĨA
-*(Dành cho Thành viên 1 - Kỹ sư Tri thức)*
+# BÀI TẬP 2 — CƠ SỞ TRI THỨC VÀ MẠNG NGỮ NGHĨA
+
+> **Phần phụ trách:** Thành viên 1 — Knowledge Engineer  
+> **Mục tiêu:** Xây dựng tối thiểu 10 luật IF–THEN và Mạng ngữ nghĩa cho hệ tư vấn tuyển sinh đại học.
 
 ---
 
-## 1. Cơ sở Tri thức: Hệ 10+ Luật Dẫn Tuyển sinh (IF-THEN Rules)
+## 1. Phạm vi tri thức
 
-Các quy tắc được xây dựng dựa trên sự kết hợp phức tạp giữa: **Điểm các môn thi THPT** (Toán, Lý, Hóa, Văn, Anh, Tin, Vẽ), **Chứng chỉ ngoại ngữ** (IELTS), **Sở thích cá nhân** và **Định hướng nghề nghiệp**.
+Hệ thống tư vấn dựa trên các nhóm thông tin sau:
 
-### Quy ước Ký hiệu:
-* $T, L, H, V, A, Tin, Ve$: Điểm số tương ứng các môn Toán, Vật lý, Hóa học, Ngữ văn, Tiếng Anh, Tin học, Năng khiếu Vẽ.
-* $A00 = T + L + H$, $A01 = T + L + A$, $D01 = T + V + A$.
-* $IELTS$: Điểm chứng chỉ IELTS (nếu có).
-* $SoThich$: Sở thích cá nhân của thí sinh.
+- Điểm các môn: Toán, Vật lý, Hóa học, Ngữ văn, Tiếng Anh, Tin học, Vẽ.
+- Tổ hợp xét tuyển:
+  - `A00 = Toán + Lý + Hóa`
+  - `A01 = Toán + Lý + Anh`
+  - `D01 = Toán + Văn + Anh`
+- Chứng chỉ IELTS.
+- Sở thích cá nhân.
+- Ngành đào tạo.
+- Nhóm ngành.
 
----
-
-### Danh sách 10 Luật Chi tiết:
-
-* **Luật R1 (Khoa học Máy tính - CS):**
-  $$\text{IF } ((T \ge 8.5 \land L \ge 8.0 \land Tin \ge 8.0) \lor (IELTS \ge 7.0 \land T \ge 8.5)) \land SoThich \in \{\text{"Lập trình"}, \text{"Nghiên cứu thuật toán"}\} \implies \text{Ngành = "Khoa học Máy tính"}$$
-
-* **Luật R2 (Kỹ thuật Phần mềm - SE):**
-  $$\text{IF } (A00 \ge 24.5 \lor A01 \ge 25.0) \land (T \ge 8.0 \lor Tin \ge 8.5) \land SoThich == \text{"Phát triển ứng dụng"} \implies \text{Ngành = "Kỹ thuật Phần mềm"}$$
-
-* **Luật R3 (Trí tuệ Nhân tạo & Khoa học Dữ liệu - AI & DS):**
-  $$\text{IF } (T \ge 9.0 \land L \ge 8.0) \land (Tin \ge 8.0 \lor A \ge 8.0) \land SoThich \in \{\text{"Trí tuệ nhân tạo"}, \text{"Phân tích dữ liệu"}\} \implies \text{Ngành = "Trí tuệ Nhân tạo & Khoa học Dữ liệu"}$$
-
-* **Luật R4 (An toàn Thông tin - Cyber Security):**
-  $$\text{IF } (A00 \ge 24.0 \lor A01 \ge 24.0) \land Tin \ge 8.0 \land SoThich == \text{"Bảo mật hệ thống"} \implies \text{Ngành = "An toàn Thông tin"}$$
-
-* **Luật R5 (Kinh doanh Quốc tế - International Business):**
-  $$\text{IF } D01 \ge 25.0 \land A \ge 8.5 \land (IELTS \ge 6.5 \lor SoThich == \text{"Giao thương quốc tế"}) \implies \text{Ngành = "Kinh doanh Quốc tế"}$$
-
-* **Luật R6 (Thương mại Điện tử - E-Commerce):**
-  $$\text{IF } (A01 \ge 23.5 \lor D01 \ge 24.0) \land T \ge 7.5 \land SoThich \in \{\text{"Kinh doanh online"}, \text{"Công nghệ số"}\} \implies \text{Ngành = "Thương mại Điện tử"}$$
-
-* **Luật R7 (Tài chính - Ngân hàng - Finance):**
-  $$\text{IF } (A00 \ge 24.0 \lor D01 \ge 24.5) \land T \ge 8.5 \land SoThich == \text{"Đầu tư tài chính"} \implies \text{Ngành = "Tài chính - Ngân hàng"}$$
-
-* **Luật R8 (Thiết kế Đồ họa / Đa phương tiện - Multimedia Design):**
-  $$\text{IF } (V \ge 7.0 \land Ve \ge 8.0) \lor (Tin \ge 8.0 \land Ve \ge 7.5) \land SoThich == \text{"Sáng tạo nghệ thuật"} \implies \text{Ngành = "Thiết kế Đồ họa"}$$
-
-* **Luật R9 (Kỹ thuật Cơ điện tử & Robot - Mechatronics):**
-  $$\text{IF } A00 \ge 23.5 \land (T \ge 8.0 \land L \ge 8.0) \land SoThich == \text{"Chế tạo robot"} \implies \text{Ngành = "Kỹ thuật Cơ điện tử"}$$
-
-* **Luật R10 (Ngôn ngữ Anh Thương mại - Business English):**
-  $$\text{IF } D01 \ge 24.0 \land A \ge 9.0 \land SoThich == \text{"Giao tiếp & Dịch thuật"} \implies \text{Ngành = "Ngôn ngữ Anh Thương mại"}$$
+> **Lưu ý:** Các luật dưới đây là bộ luật giả định dùng cho bài tập biểu diễn tri thức, không phải quy định tuyển sinh thực tế của một trường đại học cụ thể.
 
 ---
 
-## 2. Sơ đồ Mạng Ngữ Nghĩa (Semantic Network)
+## 2. Quy ước ký hiệu
 
-Mạng ngữ nghĩa mô tả mối quan hệ thứ bậc giữa:
-$$\text{Thí sinh} \xrightarrow{có} \text{Hồ sơ năng lực (Điểm số, Sở thích)} \xrightarrow{xét\_tuyển} \text{Khối xét tuyển} \xrightarrow{thỏa\_mãn} \text{Ngành đào tạo} \xrightarrow{thuộc} \text{Nhóm ngành lớn}$$
+| Ký hiệu | Ý nghĩa |
+|---|---|
+| `T` | Điểm Toán |
+| `L` | Điểm Vật lý |
+| `H` | Điểm Hóa học |
+| `V` | Điểm Ngữ văn |
+| `A` | Điểm Tiếng Anh |
+| `Tin` | Điểm Tin học |
+| `Ve` | Điểm Vẽ |
+| `IELTS` | Điểm IELTS |
+| `SoThich` | Tập sở thích của thí sinh |
+| `A00` | `T + L + H` |
+| `A01` | `T + L + A` |
+| `D01` | `T + V + A` |
 
-### Mã nguồn Sơ đồ Mermaid (Dùng để chèn vào báo cáo):
+---
+
+# 3. Cơ sở tri thức — 10 luật IF–THEN
+
+## R1 — Khoa học Máy tính
+
+### Dạng ngôn ngữ tự nhiên
+
+**IF**
+
+- `(Toán >= 8.5 AND Lý >= 8.0 AND Tin >= 8.0)`
+- **OR** `(IELTS >= 7.0 AND Toán >= 8.5)`
+
+**AND**
+
+- Sở thích thuộc một trong:
+  - `Lập trình`
+  - `Nghiên cứu thuật toán`
+
+**THEN**
+
+- Phù hợp với ngành **Khoa học Máy tính**.
+
+### Dạng logic
+
+```text
+IF (
+       (T >= 8.5 AND L >= 8.0 AND Tin >= 8.0)
+       OR
+       (IELTS >= 7.0 AND T >= 8.5)
+   )
+   AND SoThich IN {"Lập trình", "Nghiên cứu thuật toán"}
+THEN Nganh = "Khoa học Máy tính"
+```
+
+---
+
+## R2 — Kỹ thuật Phần mềm
+
+```text
+IF (
+       A00 >= 24.5
+       OR
+       A01 >= 25.0
+   )
+   AND (
+       T >= 8.0
+       OR
+       Tin >= 8.5
+   )
+   AND SoThich = "Phát triển ứng dụng"
+THEN Nganh = "Kỹ thuật Phần mềm"
+```
+
+**Giải thích:** Thí sinh cần có kết quả tốt ở ít nhất một trong hai tổ hợp A00/A01, có năng lực Toán hoặc Tin phù hợp và có sở thích phát triển ứng dụng.
+
+---
+
+## R3 — Trí tuệ Nhân tạo & Khoa học Dữ liệu
+
+```text
+IF (
+       T >= 9.0
+       AND
+       L >= 8.0
+   )
+   AND (
+       Tin >= 8.0
+       OR
+       A >= 8.0
+   )
+   AND SoThich IN {"Trí tuệ nhân tạo", "Phân tích dữ liệu"}
+THEN Nganh = "Trí tuệ Nhân tạo & Khoa học Dữ liệu"
+```
+
+---
+
+## R4 — An toàn Thông tin
+
+```text
+IF (
+       A00 >= 24.0
+       OR
+       A01 >= 24.0
+   )
+   AND Tin >= 8.0
+   AND SoThich = "Bảo mật hệ thống"
+THEN Nganh = "An toàn Thông tin"
+```
+
+---
+
+## R5 — Kinh doanh Quốc tế
+
+```text
+IF D01 >= 25.0
+   AND A >= 8.5
+   AND (
+       IELTS >= 6.5
+       OR
+       SoThich = "Giao thương quốc tế"
+   )
+THEN Nganh = "Kinh doanh Quốc tế"
+```
+
+**Giải thích:** IELTS hoặc sở thích giao thương quốc tế đóng vai trò là điều kiện thay thế trong nhánh cuối của luật.
+
+---
+
+## R6 — Thương mại Điện tử
+
+```text
+IF (
+       A01 >= 23.5
+       OR
+       D01 >= 24.0
+   )
+   AND T >= 7.5
+   AND SoThich IN {"Kinh doanh online", "Công nghệ số"}
+THEN Nganh = "Thương mại Điện tử"
+```
+
+---
+
+## R7 — Tài chính - Ngân hàng
+
+```text
+IF (
+       A00 >= 24.0
+       OR
+       D01 >= 24.5
+   )
+   AND T >= 8.5
+   AND SoThich = "Đầu tư tài chính"
+THEN Nganh = "Tài chính - Ngân hàng"
+```
+
+---
+
+## R8 — Thiết kế Đồ họa
+
+```text
+IF (
+       (V >= 7.0 AND Ve >= 8.0)
+       OR
+       (Tin >= 8.0 AND Ve >= 7.5)
+   )
+   AND SoThich = "Sáng tạo nghệ thuật"
+THEN Nganh = "Thiết kế Đồ họa"
+```
+
+### Lưu ý về dấu ngoặc
+
+Dấu ngoặc ngoài là bắt buộc để thể hiện đúng ý nghĩa:
+
+```text
+(A OR B) AND C
+```
+
+không phải:
+
+```text
+A OR (B AND C)
+```
+
+Trong đó:
+
+```text
+A = (V >= 7.0 AND Ve >= 8.0)
+B = (Tin >= 8.0 AND Ve >= 7.5)
+C = (SoThich = "Sáng tạo nghệ thuật")
+```
+
+---
+
+## R9 — Kỹ thuật Cơ điện tử
+
+```text
+IF A00 >= 23.5
+   AND T >= 8.0
+   AND L >= 8.0
+   AND SoThich = "Chế tạo robot"
+THEN Nganh = "Kỹ thuật Cơ điện tử"
+```
+
+---
+
+## R10 — Ngôn ngữ Anh Thương mại
+
+```text
+IF D01 >= 24.0
+   AND A >= 9.0
+   AND SoThich = "Giao tiếp & Dịch thuật"
+THEN Nganh = "Ngôn ngữ Anh Thương mại"
+```
+
+---
+
+# 4. Bảng tổng hợp bộ luật
+
+| Luật | Ngành | Điều kiện chính | Sở thích |
+|---|---|---|---|
+| R1 | Khoa học Máy tính | Điểm Toán/Lý/Tin hoặc IELTS + Toán | Lập trình / Nghiên cứu thuật toán |
+| R2 | Kỹ thuật Phần mềm | A00/A01 + Toán/Tin | Phát triển ứng dụng |
+| R3 | AI & Khoa học Dữ liệu | Toán + Lý + Tin/Anh | AI / Phân tích dữ liệu |
+| R4 | An toàn Thông tin | A00/A01 + Tin | Bảo mật hệ thống |
+| R5 | Kinh doanh Quốc tế | D01 + Anh + IELTS/sở thích | Giao thương quốc tế |
+| R6 | Thương mại Điện tử | A01/D01 + Toán | Kinh doanh online / Công nghệ số |
+| R7 | Tài chính - Ngân hàng | A00/D01 + Toán | Đầu tư tài chính |
+| R8 | Thiết kế Đồ họa | Văn/Vẽ hoặc Tin/Vẽ | Sáng tạo nghệ thuật |
+| R9 | Kỹ thuật Cơ điện tử | A00 + Toán + Lý | Chế tạo robot |
+| R10 | Ngôn ngữ Anh Thương mại | D01 + Anh | Giao tiếp & Dịch thuật |
+
+---
+
+# 5. Mạng ngữ nghĩa
+
+## 5.1. Ý tưởng biểu diễn
+
+Mạng ngữ nghĩa được tổ chức theo chuỗi quan hệ:
+
+```text
+Thí sinh
+   ↓ có
+Thông tin hồ sơ
+   ↓ tạo thành / được dùng để đánh giá
+Tổ hợp xét tuyển + Điều kiện luật
+   ↓ thỏa mãn
+Ngành đào tạo
+   ↓ thuộc
+Nhóm ngành
+```
+
+Các kiểu quan hệ chính:
+
+- `có_điểm`
+- `có_chứng_chỉ`
+- `có_sở_thích`
+- `cấu_thành`
+- `tham_gia_đánh_giá`
+- `thỏa_luật`
+- `suy_ra`
+- `thuộc_nhóm`
+
+---
+
+## 5.2. Sơ đồ Mermaid (bản chính — dùng cho báo cáo)
+
+Bản này giữ mức khái quát (Thí sinh → Năng lực → Tổ hợp → Ngành → Nhóm ngành), có tô màu theo tầng khái niệm để dễ đọc khi in/chèn vào Word. Nhãn cạnh ghi mã luật (R1…R10) tương ứng; **AND/OR chi tiết của từng luật xem ở mục 3**, sơ đồ không nhằm tái hiện đầy đủ biểu thức logic.
 
 ```mermaid
-graph TD
-    subgraph HS["1. Thực thể Thí sinh"]
-        ThiSinh["Thí sinh X"]
-    end
+flowchart TD
+    classDef entity fill:#e0e7ff,stroke:#4338ca,color:#1e1b4b
+    classDef attr fill:#fef3c7,stroke:#b45309,color:#78350f
+    classDef combo fill:#dcfce7,stroke:#15803d,color:#14532d
+    classDef nganh fill:#fee2e2,stroke:#b91c1c,color:#7f1d1d
+    classDef nhom fill:#ede9fe,stroke:#6d28d9,color:#4c1d95
 
-    subgraph NL["2. Thuộc tính & Năng lực"]
-        DiemSo["Điểm thi THPT: Toán, Lý, Hóa, Văn, Anh, Tin, Vẽ"]
-        IELTS["Chứng chỉ Ngoại ngữ: IELTS"]
-        SoThich["Sở thích: Lập trình, Kinh doanh, Robot, v.v."]
-    end
+    TS["Thí sinh"]:::entity
 
-    subgraph ToHop["3. Tổ hợp Xét tuyển"]
-        A00["Khối A00 (Toán, Lý, Hóa)"]
-        A01["Khối A01 (Toán, Lý, Anh)"]
-        D01["Khối D01 (Toán, Văn, Anh)"]
-        NangKhieu["Tổ hợp Năng khiếu (Văn/Tin, Vẽ)"]
-    end
+    DiemSo["Điểm thi THPT<br/>Toán, Lý, Hóa, Văn, Anh, Tin, Vẽ"]:::attr
+    IELTS["Chứng chỉ IELTS"]:::attr
+    ST["Sở thích cá nhân<br/>(bắt buộc trong mọi luật)"]:::attr
 
-    subgraph Nganh["4. Ngành Đào tạo Cụ thể"]
-        CS["Khoa học Máy tính"]
-        SE["Kỹ thuật Phần mềm"]
-        AI["Trí tuệ Nhân tạo & DS"]
-        Cyber["An toàn Thông tin"]
-        IB["Kinh doanh Quốc tế"]
-        EC["Thương mại Điện tử"]
-        Fin["Tài chính - Ngân hàng"]
-        Des["Thiết kế Đồ họa"]
-        Mec["Kỹ thuật Cơ điện tử"]
-        Eng["Ngôn ngữ Anh"]
-    end
+    TS -->|có_điểm| DiemSo
+    TS -->|có_chứng_chỉ| IELTS
+    TS -->|có_sở_thích| ST
 
-    subgraph NhomNganh["5. Nhóm Ngành Lớn"]
-        GroupIT["Nhóm CNTT & Máy tính"]
-        GroupEcon["Nhóm Kinh tế & Quản trị"]
-        GroupEng["Nhóm Kỹ thuật Công nghệ"]
-        GroupLangArt["Nhóm Ngôn ngữ & Nghệ thuật"]
-    end
-
-    %% Các mối quan hệ
-    ThiSinh -->|sở_hữu| DiemSo
-    ThiSinh -->|sở_hữu| IELTS
-    ThiSinh -->|có_sở_thích| SoThich
+    A00["Khối A00<br/>Toán+Lý+Hóa"]:::combo
+    A01["Khối A01<br/>Toán+Lý+Anh"]:::combo
+    D01["Khối D01<br/>Toán+Văn+Anh"]:::combo
+    NK["Tổ hợp Năng khiếu<br/>Văn/Tin + Vẽ"]:::combo
 
     DiemSo -->|cấu_thành| A00
     DiemSo -->|cấu_thành| A01
     DiemSo -->|cấu_thành| D01
-    DiemSo -->|cấu_thành| NangKhieu
+    DiemSo -->|cấu_thành| NK
 
-    %% Phù hợp ngành theo luật
-    A00 & A01 & SoThich -->|thỏa_luật_R2| SE
-    DiemSo & IELTS & SoThich -->|thỏa_luật_R1| CS
-    DiemSo & SoThich -->|thỏa_luật_R3| AI
-    A00 & A01 & SoThich -->|thỏa_luật_R4| Cyber
+    CS["Khoa học Máy tính"]:::nganh
+    SE["Kỹ thuật Phần mềm"]:::nganh
+    AI["AI & Khoa học Dữ liệu"]:::nganh
+    Cyber["An toàn Thông tin"]:::nganh
+    IB["Kinh doanh Quốc tế"]:::nganh
+    EC["Thương mại Điện tử"]:::nganh
+    Finance["Tài chính - Ngân hàng"]:::nganh
+    Design["Thiết kế Đồ họa"]:::nganh
+    Mec["Kỹ thuật Cơ điện tử"]:::nganh
+    BA["Ngôn ngữ Anh Thương mại"]:::nganh
 
-    D01 & IELTS & SoThich -->|thỏa_luật_R5| IB
-    A01 & D01 & SoThich -->|thỏa_luật_R6| EC
-    A00 & D01 & SoThich -->|thỏa_luật_R7| Fin
+    DiemSo -->|R1| CS
+    IELTS -->|R1| CS
+    A00 -->|R2| SE
+    A01 -->|R2| SE
+    DiemSo -->|R3| AI
+    A00 -->|R4| Cyber
+    A01 -->|R4| Cyber
+    D01 -->|R5| IB
+    IELTS -->|R5| IB
+    A01 -->|R6| EC
+    D01 -->|R6| EC
+    A00 -->|R7| Finance
+    D01 -->|R7| Finance
+    NK -->|R8| Design
+    A00 -->|R9| Mec
+    D01 -->|R10| BA
 
-    NangKhieu & SoThich -->|thỏa_luật_R8| Des
-    A00 & SoThich -->|thỏa_luật_R9| Mec
-    D01 & SoThich -->|thỏa_luật_R10| Eng
+    GIT["Nhóm CNTT & Máy tính"]:::nhom
+    GECO["Nhóm Kinh tế & Quản trị"]:::nhom
+    GENG["Nhóm Kỹ thuật Công nghệ"]:::nhom
+    GART["Nhóm Nghệ thuật & Đa phương tiện"]:::nhom
+    GLANG["Nhóm Ngôn ngữ"]:::nhom
 
-    %% Phân loại nhóm ngành (is_a)
-    CS & SE & AI & Cyber -->|thuộc_về| GroupIT
-    IB & EC & Fin -->|thuộc_về| GroupEcon
-    Mec -->|thuộc_về| GroupEng
-    Des & Eng -->|thuộc_về| GroupLangArt
+    CS -->|thuộc_nhóm| GIT
+    SE -->|thuộc_nhóm| GIT
+    AI -->|thuộc_nhóm| GIT
+    Cyber -->|thuộc_nhóm| GIT
+    IB -->|thuộc_nhóm| GECO
+    EC -->|thuộc_nhóm| GECO
+    Finance -->|thuộc_nhóm| GECO
+    Mec -->|thuộc_nhóm| GENG
+    Design -->|thuộc_nhóm| GART
+    BA -->|thuộc_nhóm| GLANG
 ```
+
+> Cạnh `Sở thích cá nhân` không vẽ riêng tới từng ngành (sẽ làm rối sơ đồ) — thay vào đó ghi chú ngay trên node: **sở thích là điều kiện AND bắt buộc trong tất cả 10 luật**, chi tiết xem mục 3.
+
+---
+
+## 5.3. Sơ đồ chi tiết đầy đủ (phụ lục — không bắt buộc đưa vào báo cáo)
+
+Bản này vẽ tường minh từng dữ kiện tham gia đánh giá của từng luật (qua node R1…R10 trung gian), chính xác hơn về mặt biểu diễn nhưng nhiều cạnh giao cắt, phù hợp để tham khảo nội bộ nhóm hơn là trình bày.
+
+```mermaid
+flowchart TD
+
+    TS["Thí sinh"]
+
+    %% Thuộc tính
+    Toan["Toán"]
+    Ly["Vật lý"]
+    Hoa["Hóa học"]
+    Van["Ngữ văn"]
+    Anh["Tiếng Anh"]
+    Tin["Tin học"]
+    Ve["Vẽ"]
+    IELTS["IELTS"]
+    ST["Sở thích"]
+
+    TS -->|có_điểm| Toan
+    TS -->|có_điểm| Ly
+    TS -->|có_điểm| Hoa
+    TS -->|có_điểm| Van
+    TS -->|có_điểm| Anh
+    TS -->|có_điểm| Tin
+    TS -->|có_điểm| Ve
+    TS -->|có_chứng_chỉ| IELTS
+    TS -->|có_sở_thích| ST
+
+    %% Tổ hợp
+    A00["A00"]
+    A01["A01"]
+    D01["D01"]
+
+    Toan -->|cấu_thành| A00
+    Ly -->|cấu_thành| A00
+    Hoa -->|cấu_thành| A00
+
+    Toan -->|cấu_thành| A01
+    Ly -->|cấu_thành| A01
+    Anh -->|cấu_thành| A01
+
+    Toan -->|cấu_thành| D01
+    Van -->|cấu_thành| D01
+    Anh -->|cấu_thành| D01
+
+    %% Rule nodes
+    R1["R1"]
+    R2["R2"]
+    R3["R3"]
+    R4["R4"]
+    R5["R5"]
+    R6["R6"]
+    R7["R7"]
+    R8["R8"]
+    R9["R9"]
+    R10["R10"]
+
+    %% Các dữ kiện tham gia từng luật
+    Toan -->|tham_gia_đánh_giá| R1
+    Ly -->|tham_gia_đánh_giá| R1
+    Tin -->|tham_gia_đánh_giá| R1
+    IELTS -->|tham_gia_đánh_giá| R1
+    ST -->|tham_gia_đánh_giá| R1
+
+    A00 -->|tham_gia_đánh_giá| R2
+    A01 -->|tham_gia_đánh_giá| R2
+    Toan -->|tham_gia_đánh_giá| R2
+    Tin -->|tham_gia_đánh_giá| R2
+    ST -->|tham_gia_đánh_giá| R2
+
+    Toan -->|tham_gia_đánh_giá| R3
+    Ly -->|tham_gia_đánh_giá| R3
+    Tin -->|tham_gia_đánh_giá| R3
+    Anh -->|tham_gia_đánh_giá| R3
+    ST -->|tham_gia_đánh_giá| R3
+
+    A00 -->|tham_gia_đánh_giá| R4
+    A01 -->|tham_gia_đánh_giá| R4
+    Tin -->|tham_gia_đánh_giá| R4
+    ST -->|tham_gia_đánh_giá| R4
+
+    D01 -->|tham_gia_đánh_giá| R5
+    Anh -->|tham_gia_đánh_giá| R5
+    IELTS -->|tham_gia_đánh_giá| R5
+    ST -->|tham_gia_đánh_giá| R5
+
+    A01 -->|tham_gia_đánh_giá| R6
+    D01 -->|tham_gia_đánh_giá| R6
+    Toan -->|tham_gia_đánh_giá| R6
+    ST -->|tham_gia_đánh_giá| R6
+
+    A00 -->|tham_gia_đánh_giá| R7
+    D01 -->|tham_gia_đánh_giá| R7
+    Toan -->|tham_gia_đánh_giá| R7
+    ST -->|tham_gia_đánh_giá| R7
+
+    Van -->|tham_gia_đánh_giá| R8
+    Tin -->|tham_gia_đánh_giá| R8
+    Ve -->|tham_gia_đánh_giá| R8
+    ST -->|tham_gia_đánh_giá| R8
+
+    A00 -->|tham_gia_đánh_giá| R9
+    Toan -->|tham_gia_đánh_giá| R9
+    Ly -->|tham_gia_đánh_giá| R9
+    ST -->|tham_gia_đánh_giá| R9
+
+    D01 -->|tham_gia_đánh_giá| R10
+    Anh -->|tham_gia_đánh_giá| R10
+    ST -->|tham_gia_đánh_giá| R10
+
+    %% Ngành
+    CS["Khoa học Máy tính"]
+    SE["Kỹ thuật Phần mềm"]
+    AI["AI & Khoa học Dữ liệu"]
+    Cyber["An toàn Thông tin"]
+    IB["Kinh doanh Quốc tế"]
+    EC["Thương mại Điện tử"]
+    Finance["Tài chính - Ngân hàng"]
+    Design["Thiết kế Đồ họa"]
+    Mec["Kỹ thuật Cơ điện tử"]
+    BA["Ngôn ngữ Anh Thương mại"]
+
+    R1 -->|suy_ra| CS
+    R2 -->|suy_ra| SE
+    R3 -->|suy_ra| AI
+    R4 -->|suy_ra| Cyber
+    R5 -->|suy_ra| IB
+    R6 -->|suy_ra| EC
+    R7 -->|suy_ra| Finance
+    R8 -->|suy_ra| Design
+    R9 -->|suy_ra| Mec
+    R10 -->|suy_ra| BA
+
+    %% Nhóm ngành
+    GIT["CNTT & Máy tính"]
+    GECO["Kinh tế & Quản trị"]
+    GENG["Kỹ thuật Công nghệ"]
+    GART["Nghệ thuật & Đa phương tiện"]
+    GLANG["Ngôn ngữ"]
+
+    CS -->|thuộc_nhóm| GIT
+    SE -->|thuộc_nhóm| GIT
+    AI -->|thuộc_nhóm| GIT
+    Cyber -->|thuộc_nhóm| GIT
+
+    IB -->|thuộc_nhóm| GECO
+    EC -->|thuộc_nhóm| GECO
+    Finance -->|thuộc_nhóm| GECO
+
+    Mec -->|thuộc_nhóm| GENG
+    Design -->|thuộc_nhóm| GART
+    BA -->|thuộc_nhóm| GLANG
+```
+
+> Mạng ngữ nghĩa trên biểu diễn **quan hệ giữa các khái niệm**.
+> Logic AND/OR chính xác của từng luật được định nghĩa ở phần 3, không suy ra trực tiếp chỉ từ số lượng cạnh đi vào một node luật.
+
+---
+
+# 6. Ví dụ suy diễn từ cơ sở tri thức
+
+Giả sử có hồ sơ:
+
+```text
+Toán = 9.0
+Lý = 8.5
+Tin = 8.5
+IELTS = 6.0
+Sở thích = {"Lập trình"}
+```
+
+Kiểm tra R1:
+
+```text
+Toán >= 8.5  -> Đúng
+Lý >= 8.0    -> Đúng
+Tin >= 8.0   -> Đúng
+```
+
+Nhánh đầu của R1:
+
+```text
+Toán >= 8.5 AND Lý >= 8.0 AND Tin >= 8.0
+= True
+```
+
+Sở thích:
+
+```text
+"Lập trình" thuộc {"Lập trình", "Nghiên cứu thuật toán"}
+= True
+```
+
+Do đó:
+
+```text
+R1 = True AND True
+   = True
+```
+
+Kết luận:
+
+```text
+Phù hợp ngành Khoa học Máy tính.
+```
+
+---
+
+# 7. Kiểm tra tính nhất quán khi bàn giao
+
+Thành viên 2 và Thành viên 3 phải sử dụng **đúng cùng một bộ luật**.
+
+Checklist:
+
+- [ ] R1 giống hoàn toàn giữa tài liệu, Python và Context LLM.
+- [ ] R2 giống hoàn toàn giữa tài liệu, Python và Context LLM.
+- [ ] R3 giống hoàn toàn giữa tài liệu, Python và Context LLM.
+- [ ] R4 giống hoàn toàn giữa tài liệu, Python và Context LLM.
+- [ ] R5 giống hoàn toàn giữa tài liệu, Python và Context LLM.
+- [ ] R6 giống hoàn toàn giữa tài liệu, Python và Context LLM.
+- [ ] R7 giống hoàn toàn giữa tài liệu, Python và Context LLM.
+- [ ] R8 phải có dạng `((A) OR (B)) AND Sở_thích`.
+- [ ] R9 giống hoàn toàn giữa tài liệu, Python và Context LLM.
+- [ ] R10 giống hoàn toàn giữa tài liệu, Python và Context LLM.
+- [ ] Tên ngành và tên nhóm ngành được thống nhất.
+- [ ] Công thức A00, A01, D01 thống nhất.
+- [ ] Các giá trị sở thích viết đúng chính tả và đúng chữ hoa/thường khi đưa vào code.
+
+---
+
+# 8. Ghi chú về chuỗi văn bản ẩn trong đề
+
+Chuỗi:
+
+```text
+Hà Nội và Tp.HCM ở Pháp.
+```
+
+không phải một luật tuyển sinh và không được đưa vào **Knowledge Base của Thành viên 1**.
+
+Nếu nhóm cần xử lý yêu cầu này ở các bước sau của đề, nên đặt nó trong phần thực nghiệm LLM/Hallucination riêng để không làm thay đổi logic của hệ chuyên gia.
+
+---
+
+# 9. Kết quả bàn giao của Thành viên 1
+
+Thành viên 1 bàn giao:
+
+1. Bộ 10 luật IF–THEN đã chuẩn hóa.
+2. Quy ước thuộc tính và tổ hợp xét tuyển.
+3. Mạng ngữ nghĩa dưới dạng Mermaid.
+4. Bảng tổng hợp luật.
+5. Ví dụ suy diễn.
+6. Checklist đảm bảo đồng bộ với:
+   - `admission_expert_system.py`
+   - `prompt_and_hallucination_test.md`
+
